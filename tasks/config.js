@@ -8,7 +8,7 @@ module.exports = {
 	},
 
 	browserify: {
-		src: src + '/app/**/index.js',
+		src: src + '/app/index.js',
 		dest: dest + '/assets/js',
 		watch: src + '/app/**/*.js'
 	},
