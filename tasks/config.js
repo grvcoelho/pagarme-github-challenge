@@ -8,9 +8,9 @@ module.exports = {
 	},
 
 	browserify: {
-		src: src + '/js/**/index.js',
+		src: src + '/app/**/index.js',
 		dest: dest + '/assets/js',
-		watch: src + '/js/**/*.js'
+		watch: src + '/app/**/*.js'
 	},
 
 	clean: {
@@ -36,7 +36,7 @@ module.exports = {
 	},
 
 	lint: {
-		src: src + '/js/**/*.js'
+		src: src + '/app/**/*.js'
 	},
 
 	markup: {
@@ -45,8 +45,8 @@ module.exports = {
 	},
 
 	stylus: {
-		src: src + '/styl/**/index.styl',
+		src: src + '/assets/styl/**/index.styl',
 		dest: dest + '/assets/css',
-		watch: src + '/styl/**/*.styl'
+		watch: src + '/assets/styl/**/*.styl'
 	}
 };
