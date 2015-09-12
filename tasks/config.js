@@ -18,10 +18,8 @@ module.exports = {
 	},
 
 	copy: {
-		src: [
-			src + '/bower_components/**/*'
-		],
-		dest: dest
+		src: src + '/bower_components/**/*',
+		dest: dest + '/bower_components'
 	},
 
 	images: {
