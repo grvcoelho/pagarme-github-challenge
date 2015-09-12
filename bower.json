@@ -1,0 +1,22 @@
+{
+  "name": "pagarme-github",
+  "version": "0.5.0",
+  "homepage": "https://github.com/grvcoelho/pagarme-github",
+  "authors": [
+    "Guilherme Rv Coelho <@grvcoelho>"
+  ],
+  "description": "Angular integration with github",
+  "main": "gulpfile.js",
+  "keywords": [
+    "angular",
+    "github"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
