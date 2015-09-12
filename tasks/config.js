@@ -17,6 +17,13 @@ module.exports = {
 		path: dest
 	},
 
+	copy: {
+		src: [
+			src + '/bower_components'
+		],
+		dest: dest
+	},
+
 	images: {
 		src: src + '/assets/img/**',
 		dest: dest + '/assets/img',

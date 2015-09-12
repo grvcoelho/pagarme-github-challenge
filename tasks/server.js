@@ -6,6 +6,7 @@ var tasks = [
     'markup:watch',
     'images:watch',
     'browserify:watch',
+    'copy:watch',
     'browser'
 ];
 

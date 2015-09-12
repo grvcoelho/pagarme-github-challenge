@@ -1,6 +1,7 @@
 require('./tasks/browser');
 require('./tasks/browserify');
 require('./tasks/clean');
+require('./tasks/copy');
 require('./tasks/default');
 require('./tasks/images');
 require('./tasks/jade');
