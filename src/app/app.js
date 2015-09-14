@@ -13,10 +13,10 @@ config.$inject = ['$routeProvider'];
 function config($routeProvider) {
     $routeProvider
         .when('/', {
-            template: '<h1>Search</h1>'
+            templateUrl: 'views/search/search.html'
         })
-        .when('/test/:user/', {
-            template: '<h1>User</h1>'
+        .when('/user/:user/', {
+            templateUrl: 'views/search/user.html'
         })
         .otherwise({
             redirectTo: '/'

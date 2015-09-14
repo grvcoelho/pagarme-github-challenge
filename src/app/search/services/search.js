@@ -2,7 +2,7 @@
 
 angular
     .module('github.search')
-    .service('$search', search);
+    .service('search', search);
 
 search.$inject = [
     '$http'

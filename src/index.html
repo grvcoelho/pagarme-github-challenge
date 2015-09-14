@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Github</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-
-    <div ng-controller="SearchController as search">
-        <input type="text" ng-model="search.query">
-        <button ng-click="search.searchUser()">Search</button>
-
-        <ul ng-if="search.users">
-            <li ng-repeat="user in search.users">
-                <span ng-bind="user.login"></span>
-            </li>
-        </ul>
-    </div>
 
     <div ng-view></div>
 

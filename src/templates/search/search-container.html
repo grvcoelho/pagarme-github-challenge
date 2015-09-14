@@ -1,0 +1,6 @@
+<form ng-submit="searchContainer.searchUser()">
+    <input type="text" ng-model="searchContainer.query">
+    <button type="submit" ng-click="searchContainer.searchUser()">Search</button>
+</form>
+
+<search-results results="searchContainer.results"></search-results>

@@ -1,0 +1,11 @@
+<div class="search-results" ng-if="searchResults.results.length">
+    <div class="search-result" ng-repeat="user in searchResults.results">
+        <img class="search-result__avatar" ng-src="{{user.avatar_url}}" alt="">
+
+        <a href="#/user/{{user.login}}" class="search-result__info">
+            <span ng-bind="user.login"></span>
+        </a>
+
+        <div class="search-result__label" ng-bind="user.type"></div>
+    </div>
+</div>
