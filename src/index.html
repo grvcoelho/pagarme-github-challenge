@@ -8,7 +8,13 @@
 <body>
 
     <div ng-controller="SearchController as search">
-        {{search.test}}
+        <input type="text" ng-model="search.query" ng-blur="search.searchUser()">
+
+        <ul ng-if="search.users">
+            <li ng-repeat="user in search.users">
+                <span ng-bind="user.login"></span>
+            </li>
+        </ul>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>

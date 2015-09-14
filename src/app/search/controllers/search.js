@@ -6,11 +6,24 @@ angular
 
 SearchController.$inject = [
     '$scope',
-    '$log'
+    '$log',
+    '$search'
 ];
 
-function SearchController($scope, $log) {
+function SearchController($scope, $log, search) {
     var vm = this;
 
-    vm.test = 'hey';
+    vm.query = '';
+    vm.users = [];
+
+    vm.searchUser = searchUser;
+
+    function searchUser() {
+        search
+            .searchUser(vm.query)
+            .then(function(response) {
+                $log.info(response.data);
+                vm.users = response.data.items;
+            });
+    }
 }

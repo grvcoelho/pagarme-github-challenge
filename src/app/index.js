@@ -1,2 +1,2 @@
 require('./app');
-require('./search/index');
+require('./search/');
