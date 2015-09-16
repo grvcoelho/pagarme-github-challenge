@@ -1,11 +1,35 @@
 <div class="search-results" ng-if="searchResults.results.length">
-    <div class="search-result" ng-repeat="user in searchResults.results">
+
+    <div class="search-result__filter">
+        Filter by:
+        <div class="search-result__filter-label--user" ng-click="searchResults.filterResults('User')" ng-class="{ 'is-enabled': searchResults.filter === 'User' || searchResults.filter === '' }">
+            User
+        </div>
+
+        <div class="search-result__filter-label--organization" ng-click="searchResults.filterResults('Organization')" ng-class="{ 'is-enabled': searchResults.filter === 'Organization' || searchResults.filter === '' }">
+            Organization
+        </div>
+
+        <div class="search-result__filter-label--all" ng-click="searchResults.filterResults('')" ng-class="{ 'is-enabled': searchResults.filter === '' }">
+            All
+        </div>
+    </div>
+
+    <div class="search-result" ng-repeat="user in searchResults.results | filter: { type: searchResults.filter }">
         <img class="search-result__avatar" ng-src="{{user.avatar_url}}" alt="">
 
-        <a href="#/user/{{user.login}}" class="search-result__info">
-            <span ng-bind="user.login"></span>
-        </a>
+        <div class="search-result__info">
+            <div class="search-result__login">
+                <span ng-bind="user.login"></span>
+                <span ng-class="user.type === 'User' ? 'label--user' : 'label--organization'" ng-bind="user.type"></span>
+            </div>
 
-        <div class="search-result__label" ng-bind="user.type"></div>
+            <a href="{{user.html_url}}" class="search-result__url" ng-bind="user.html_url"></a>
+        </div>
+
+        <a href="#/users/{{user.login}}" class="search-result__more">
+            <i class="ss-icon ss-gizmo ss-plus"></i>
+            See More
+        </a>
     </div>
 </div>

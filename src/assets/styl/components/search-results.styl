@@ -3,8 +3,60 @@
 
 .search-result
     width 100%
+    margin 0  auto
+    display flex
+    flex-direction row
+    align-items center
+    background white
+    padding 15px 20px
+
+    &__filter
+        margin-bottom 30px
+        font-family $font-family-base
+        font-size 16px
+        font-weight 600
+        font-style italic
+        color darken($grey-light, 30%)
+
+    &__filter-label
+        margin-left 10px
+        cursor pointer
+        opacity .3
+        transition opacity $bezier-base .4s
+        &.is-enabled
+            opacity 1
+        &--user
+            @extend .search-result__filter-label
+            @extend .label--user
+        &--organization
+            @extend .search-result__filter-label
+            @extend .label--organization
+        &--all
+            @extend .search-result__filter-label
+            @extend .label--all
 
     &__avatar
         width 40px
         height 40px
+        margin-right 16px
         border-radius 50%
+
+    &__login
+        font-size 20px
+        font-weight 600
+        font-family $font-family-base
+
+    &__url
+        font-size 16px
+        font-weight 400
+        font-style italic
+        color #0554f2
+        letter-spacing 1px
+
+    &__more
+        @extend .btn--success
+        padding-right 10px
+        margin-left auto
+        .ss-icon
+            position relative
+            top 2px

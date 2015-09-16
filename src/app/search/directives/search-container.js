@@ -24,18 +24,24 @@ function searchContainer($log, search) {
 
         vm.results = [];
         vm.query = '';
+        vm.loading = false;
 
         vm.searchUser = searchUser;
 
-        function searchUser() {
+        function searchUser(event) {
+            if(event.keyCode !== 13) return;
+
+            vm.loading = true;
+
             search
                 .searchUser(vm.query)
                 .then(function(response) {
                     vm.results = response.data.items;
-                    $log.info(vm.results);
+                    vm.loading = false;
                 })
                 .catch(function(response) {
                     $log.error(response);
+                    vm.loading = false;
                 });
         }
     }

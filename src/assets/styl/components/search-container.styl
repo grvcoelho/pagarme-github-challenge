@@ -1,0 +1,31 @@
+.search-container
+    center(500px)
+    margin-top 50px
+
+    &__input
+        width 100%
+        margin-bottom 30px
+        background transparent
+        border 0
+        border-bottom 2px solid $grey-light
+        transition border-color $bezier-base .4s
+        font-family $font-family-base
+        font-size 22px
+        font-weight 600
+        font-style italic
+        color darken($grey-light, 50%)
+        &:hover
+            outline 0
+            border-color lighten($grey-light, 15%)
+        &:focus
+            outline 0
+            border-color darken($grey-light, 40%)
+
+    &__loading
+        margin-bottom 30px
+        font-family $font-family-base
+        font-size 16px
+        font-weight 600
+        font-style italic
+        color #333
+        opacity .2

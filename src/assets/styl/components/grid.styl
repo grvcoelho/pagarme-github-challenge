@@ -1,22 +1,10 @@
-normalize()
-box-sizing-reset()
-
-html
-body
-    height 100%
-    background white
-    font-size $font-size-base
-    font-family $font-family-base
-    color #202020
-    overflow-x hidden
-    text-rendering optimizeLegibility
-    -webkit-font-smoothing antialiased
-    -moz-osx-font-smoothing grayscale
-    -webkit-tap-highlight-color rgba(0, 0, 0, 0)
-
-hr
-    margin-top $line-height-computed
-    margin-bottom $line-height-computed
-    margin-bottom $line-height-computed
-    border 0
-    border-top 1px solid $grey-300
+.container
+    center($container-xs)
+    +above('sm')
+        center($container-sm)
+    +above('md')
+        center($container-md)
+    +above('lg')
+        center($container-lg)
+    +above('xl')
+        center($container-xl)

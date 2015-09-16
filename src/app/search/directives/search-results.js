@@ -24,5 +24,13 @@ function searchResults($log) {
 
     function controller($scope) {
         var vm = this;
+
+        vm.filter = '';
+
+        vm.filterResults = filterResults;
+
+        function filterResults(filter) {
+            vm.filter = filter;
+        }
     }
 }
