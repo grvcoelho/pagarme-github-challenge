@@ -11,10 +11,17 @@ search.$inject = [
 function search($http) {
     var service = this;
 
-    service.searchUser = searchUser;
+    service.getUser = getUser;
+    service.getRepos = getRepos;
 
-    function searchUser(query) {
+    function getUser(query) {
         var endpoint = 'https://api.github.com/search/users?q=' + query;
+
+        return $http.get(endpoint);
+    }
+
+    function getRepos(user) {
+        var endpoint = 'https://api.github.com/users/' + user + '/repos';
 
         return $http.get(endpoint);
     }

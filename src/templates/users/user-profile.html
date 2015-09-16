@@ -1,0 +1,34 @@
+<div class="user-profile-container">
+
+    <div class="user-profile__loading" ng-if="userProfile.loading">
+        Wait, TI dinousaurs working...
+    </div>
+
+    <div class="user-profile" ng-if="userProfile.repos.length">
+
+        <div class="user-profile__repos">
+            <div class="user-profile__repo" ng-repeat="repo in userProfile.repos">
+                <div class="user-profile__info">
+                    <div class="user-profile__name">
+                        <span ng-bind="repo.name"></span>
+                    </div>
+
+                    <a href="{{repo.html_url}}" class="user-profile__url" ng-bind="repo.html_url"></a>
+                </div>
+
+                <div class="user-profile__stats">
+                    <div class="user-profile__watchers">
+                        <span>{{repo.watchers}}</span> watchers
+                    </div>
+                    <div class="user-profile__stargazers">
+                        <span>{{repo.stargazers_count}}</span> stargazers_count
+                    </div>
+                    <div class="user-profile__forks">
+                        <span>{{repo.forks}}</span> forks
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

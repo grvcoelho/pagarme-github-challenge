@@ -34,7 +34,7 @@ function searchContainer($log, search) {
             vm.loading = true;
 
             search
-                .searchUser(vm.query)
+                .getUser(vm.query)
                 .then(function(response) {
                     vm.results = response.data.items;
                     vm.loading = false;

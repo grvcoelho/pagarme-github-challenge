@@ -4,7 +4,8 @@ angular
     .module('github', [
         'ngRoute',
 
-        'github.search'
+        'github.search',
+        'github.users'
     ])
     .config(config);
 
@@ -15,8 +16,8 @@ function config($routeProvider) {
         .when('/', {
             templateUrl: 'views/search/search.html'
         })
-        .when('/user/:user/', {
-            templateUrl: 'views/search/user.html'
+        .when('/users/:user', {
+            templateUrl: 'views/users/user.html'
         })
         .otherwise({
             redirectTo: '/'

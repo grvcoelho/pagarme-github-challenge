@@ -1,0 +1,65 @@
+.user-profile-container
+    center(750px)
+    margin-top 50px
+
+.user-profile
+    &__repo
+        width 100%
+        margin 0  auto
+        display flex
+        flex-direction row
+        align-items center
+        padding 15px 20px
+        background white
+
+    &__loading
+        margin-bottom 30px
+        font-family $font-family-base
+        font-size 16px
+        font-weight 600
+        font-style italic
+        color #333
+        opacity .2
+        text-align center
+
+    &__name
+        font-size 20px
+        font-weight 600
+        font-family $font-family-base
+
+    &__url
+        font-size 16px
+        font-weight 400
+        font-style italic
+        color #0554f2
+        letter-spacing 1px
+
+    &__stats
+        margin-left auto
+
+    &__stat
+        font-size 14px
+        line-height 18px
+        font-weight 600
+        font-style italic
+        text-align left
+        color $grey-light
+        span
+            width 80px
+            display inline-block
+            text-align right
+
+    &__watchers
+        @extend .user-profile__stat
+        span
+            color $red
+
+    &__stargazers
+        @extend .user-profile__stat
+        span
+            color $purple
+
+    &__forks
+        @extend .user-profile__stat
+        span
+            color $green
