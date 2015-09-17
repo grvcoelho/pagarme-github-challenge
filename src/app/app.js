@@ -16,7 +16,7 @@ function config($routeProvider) {
         .when('/', {
             templateUrl: 'views/search/search.html'
         })
-        .when('/users/:user', {
+        .when('/users/:username', {
             templateUrl: 'views/users/user.html'
         })
         .otherwise({

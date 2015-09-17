@@ -3,7 +3,7 @@
 
 .search-result
     width 100%
-    margin 0  auto
+    margin 0 auto
     display flex
     flex-direction row
     align-items center
@@ -21,19 +21,20 @@
     &__filter-label
         margin-left 10px
         cursor pointer
-        opacity .3
+        opacity .4
         transition opacity $bezier-base .4s
         &.is-enabled
             opacity 1
+            font-weight 800
         &--user
             @extend .search-result__filter-label
-            @extend .label--user
+            @extend .label--purple
         &--organization
             @extend .search-result__filter-label
-            @extend .label--organization
+            @extend .label--red
         &--all
             @extend .search-result__filter-label
-            @extend .label--all
+            @extend .label--green
 
     &__avatar
         width 40px

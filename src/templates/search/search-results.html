@@ -15,13 +15,13 @@
         </div>
     </div>
 
-    <div class="search-result" ng-repeat="user in searchResults.results | filter: { type: searchResults.filter }">
+    <div class="search-result" ng-repeat="user in searchResults.results | filter: { type: searchResults.filter } track by user.id">
         <img class="search-result__avatar" ng-src="{{user.avatar_url}}" alt="">
 
         <div class="search-result__info">
             <div class="search-result__login">
                 <span ng-bind="user.login"></span>
-                <span ng-class="user.type === 'User' ? 'label--user' : 'label--organization'" ng-bind="user.type"></span>
+                <span ng-class="user.type === 'User' ? 'label--purple' : 'label--red'" ng-bind="user.type"></span>
             </div>
 
             <a href="{{user.html_url}}" class="search-result__url" ng-bind="user.html_url"></a>

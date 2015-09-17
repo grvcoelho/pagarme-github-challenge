@@ -3,14 +3,7 @@
     margin-top 50px
 
 .user-profile
-    &__repo
-        width 100%
-        margin 0  auto
-        display flex
-        flex-direction row
-        align-items center
-        padding 15px 20px
-        background white
+    margin-bottom 90px
 
     &__loading
         margin-bottom 30px
@@ -22,44 +15,112 @@
         opacity .2
         text-align center
 
+    &__avatar
+        text-align center
+        img
+            width 150px
+            height 150px
+            margin 0 auto 25px
+            border-radius 50%
+
     &__name
-        font-size 20px
+        margin-bottom 8px
+        font-size 32px
+        line-height 32px
+        font-style italic
         font-weight 600
-        font-family $font-family-base
+        text-transform uppercase
+        text-align center
+        color $black
 
     &__url
+        display block
+        margin-bottom 35px
         font-size 16px
-        font-weight 400
         font-style italic
-        color #0554f2
-        letter-spacing 1px
+        font-weight 600
+        text-transform uppercase
+        text-decoration none
+        text-align center
+        color $blue
 
-    &__stats
-        margin-left auto
 
-    &__stat
-        font-size 14px
-        line-height 18px
+    &__filter
+        margin-bottom 30px
+        font-family $font-family-base
+        font-size 16px
         font-weight 600
         font-style italic
-        text-align left
-        color $grey-light
-        span
-            width 80px
-            display inline-block
-            text-align right
+        color darken($grey-light, 30%)
 
-    &__watchers
-        @extend .user-profile__stat
-        span
-            color $red
+    &__filter-label
+        margin-left 10px
+        cursor pointer
+        opacity .4
+        transition opacity $bezier-base .4s
+        &.is-enabled
+            opacity 1
+            font-weight 800
+        &--name
+            @extend .search-result__filter-label
+            @extend .label--black
+        &--issues
+            @extend .search-result__filter-label
+            @extend .label--red
+        &--stargazers
+            @extend .search-result__filter-label
+            @extend .label--purple
+        &--forks
+            @extend .search-result__filter-label
+            @extend .label--green
 
-    &__stargazers
-        @extend .user-profile__stat
-        span
-            color $purple
+    &__repo
+        width 100%
+        margin 0 auto
+        display flex
+        flex-direction row
+        align-items center
+        padding 15px 20px
+        background white
 
-    &__forks
-        @extend .user-profile__stat
-        span
-            color $green
+        &__name
+            font-size 20px
+            font-weight 600
+            font-family $font-family-base
+
+        &__url
+            font-size 16px
+            font-weight 400
+            font-style italic
+            color #0554f2
+            letter-spacing 1px
+
+        &__stats
+            margin-left auto
+
+        &__stat
+            font-size 14px
+            line-height 18px
+            font-weight 600
+            font-style italic
+            text-align left
+            color $grey-light
+            span
+                width 80px
+                display inline-block
+                text-align right
+
+        &__issues
+            @extend .user-profile__repo__stat
+            span
+                color $red
+
+        &__stargazers
+            @extend .user-profile__repo__stat
+            span
+                color $purple
+
+        &__forks
+            @extend .user-profile__repo__stat
+            span
+                color $green

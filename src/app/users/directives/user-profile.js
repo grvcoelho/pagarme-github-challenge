@@ -25,17 +25,42 @@ function userProfile($routeParams, $log, search) {
 
         vm.loading = false;
         vm.repos = [];
-        vm.user = $routeParams.user;
+        vm.username = $routeParams.username;
+        vm.user = {};
+        vm.orderRule = 'name';
 
+        vm.init = init;
+        vm.orderResults = orderResults;
+        vm.getUser = getUser;
         vm.getRepos = getRepos;
 
-        getRepos();
+        init();
+
+        function init() {
+            vm.getRepos();
+            vm.getUser();
+        }
+
+        function orderResults(orderRule) {
+            vm.orderRule = orderRule;
+        }
+
+        function getUser() {
+            vm.loading = true;
+
+            search
+                .getUser(vm.username)
+                .then(function(response) {
+                    vm.user = response.data.items[0];
+                });
+
+        }
 
         function getRepos() {
             vm.loading = true;
 
             search
-                .getRepos(vm.user)
+                .getRepos(vm.username)
                 .then(function(response) {
                     vm.repos = response.data;
                     vm.loading = false;
