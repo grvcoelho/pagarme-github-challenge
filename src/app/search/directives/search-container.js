@@ -5,11 +5,13 @@ angular
     .directive('searchContainer', searchContainer);
 
 searchContainer.$inject = [
+    '$routeParams',
+    '$location',
     '$log',
     'search'
 ];
 
-function searchContainer($log, search) {
+function searchContainer($routeParams, $location, $log, search) {
     var directive = {
         restrict: 'EA',
         controller: controller,
@@ -23,15 +25,31 @@ function searchContainer($log, search) {
         var vm = this;
 
         vm.results = [];
-        vm.query = '';
+        vm.query = $location.search().query || '';
         vm.loading = false;
 
-        vm.searchUser = searchUser;
+        vm.init = init;
+        vm.searchQuery = searchQuery;
+        vm.getUser = getUser;
 
-        function searchUser(event) {
-            if(event.keyCode !== 13) return;
+        vm.init();
 
+        function init() {
+            if(vm.query) {
+                vm.getUser();
+            }
+        }
+
+        function searchQuery(event) {
+            if(event.keyCode === 13) {
+                vm.getUser();
+            }
+        }
+
+        function getUser() {
             vm.loading = true;
+
+            $location.search('query', vm.query);
 
             search
                 .getUser(vm.query)

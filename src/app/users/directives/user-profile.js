@@ -64,7 +64,6 @@ function userProfile($routeParams, $log, search) {
                 .then(function(response) {
                     vm.repos = response.data;
                     vm.loading = false;
-                    $log.info(response);
                 })
                 .catch(function(response) {
                     $log.error(response);
