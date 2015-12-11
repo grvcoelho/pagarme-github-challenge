@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var tasks = [
+    'clean',
     'server'
 ];
 
