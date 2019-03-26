@@ -1,0 +1,68 @@
+<div class="user-profile-container">
+
+    <div class="user-profile__loading" ng-if="userProfile.loading">
+        Wait, TI dinousaurs working...
+    </div>
+
+    <div class="user-profile" ng-if="userProfile.repos.length">
+
+        <div class="user-profile__info">
+            <div class="user-profile__avatar">
+                <img ng-src="{{userProfile.user.avatar_url}}">
+            </div>
+
+            <div class="user-profile__name">
+                {{userProfile.user.login}}
+            </div>
+
+            <a href="{{userProfile.user.html_url}}" class="user-profile__url">
+                {{userProfile.user.html_url}}
+            </a>
+        </div>
+
+        <div class="user-profile__filter">
+            Order by:
+
+            <div class="user-profile__filter-label--name" ng-click="userProfile.orderResults('name')" ng-class="{ 'is-enabled': userProfile.orderRule === 'name' }">
+                name
+            </div>
+
+            <div class="user-profile__filter-label--stargazers" ng-click="userProfile.orderResults('-stargazers_count')" ng-class="{ 'is-enabled': userProfile.orderRule === '-stargazers_count' }">
+                stargazers
+            </div>
+
+            <div class="user-profile__filter-label--forks" ng-click="userProfile.orderResults('-forks')" ng-class="{ 'is-enabled': userProfile.orderRule === '-forks' }">
+                forks
+            </div>
+
+            <div class="user-profile__filter-label--issues" ng-click="userProfile.orderResults('-open_issues')" ng-class="{ 'is-enabled': userProfile.orderRule === '-open_issues' }">
+                issues
+            </div>
+        </div>
+
+        <div class="user-profile__repos">
+            <div class="user-profile__repo" ng-repeat="repo in userProfile.repos | orderBy:userProfile.orderRule track by repo.id">
+                <div class="user-profile__repo__info">
+                    <div class="user-profile__repo__name">
+                        <span ng-bind="repo.name"></span>
+                    </div>
+
+                    <a href="{{repo.html_url}}" class="user-profile__repo__url" ng-bind="repo.html_url"></a>
+                </div>
+
+                <div class="user-profile__repo__stats">
+                    <div class="user-profile__repo__stargazers">
+                        <span>{{repo.stargazers_count}}</span> stargazers_count
+                    </div>
+                    <div class="user-profile__repo__forks">
+                        <span>{{repo.forks}}</span> forks
+                    </div>
+                    <div class="user-profile__repo__issues">
+                        <span>{{repo.open_issues}}</span> issues
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

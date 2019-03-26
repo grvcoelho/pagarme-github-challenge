@@ -1,0 +1,9 @@
+<div class="search-container">
+    <input class="search-container__input" placeholder="Search for user or organization" type="text" ng-model="searchContainer.query" ng-keypress="searchContainer.searchQuery($event)">
+
+    <div class="search-container__loading" ng-if="searchContainer.loading">
+        Wait, TI dinousaurs working...
+    </div>
+
+    <search-results results="searchContainer.results"></search-results>
+</div>
