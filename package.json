@@ -4,7 +4,9 @@
   "description": "Angular integration with github",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
+    "deploy": "gh-pages -d dist",
+    "setup": "bower install",
+    "start": "gulp clean && gulp"
   },
   "repository": {
     "type": "git",
